@@ -1,5 +1,5 @@
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -12,45 +12,63 @@ void solve()
     int flag1 = p1 & 1;
     int flag2 = p2 & 1;
     int flag3 = p3 & 1;
-    if(flag1 == flag2 && flag2 == flag3) {
+    if (flag1 == flag2 && flag2 == flag3)
+    {
         m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
-        if(flag1 == 0) m--;
+        if (flag1 == 0)
+            m--;
     }
-    else if(flag1 == flag2) {
-        if(p3) p3--;
-        else {
-            p1--;p2--;
+    else if (flag1 == flag2)
+    {
+        if (p3)
+            p3--;
+        else
+        {
+            p1--;
+            p2--;
             flag1 = p1 & 1;
         }
-        if(flag1 == 0) {
-                m = p1 / 2 + p2 / 2 + p3 / 2;
-            }
-            else m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
-    }
-    else if(flag1 == flag3) {
-        if(p2) p2--;
-        else {
-            p1--;p3--;
-            flag1 = p1 & 1;
-            
+        if (flag1 == 0)
+        {
+            m = p1 / 2 + p2 / 2 + p3 / 2;
         }
-        if(flag1 == 0) {
-                m = p1 / 2 + p2 / 2 + p3 / 2;
-            }
-            else m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
+        else
+            m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
     }
-    else {
-        if(p1) p1--;
-        else {
-            p2--;p3--;
+    else if (flag1 == flag3)
+    {
+        if (p2)
+            p2--;
+        else
+        {
+            p1--;
+            p3--;
+            flag1 = p1 & 1;
+        }
+        if (flag1 == 0)
+        {
+            m = p1 / 2 + p2 / 2 + p3 / 2;
+        }
+        else
+            m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
+    }
+    else
+    {
+        if (p1)
+            p1--;
+        else
+        {
+            p2--;
+            p3--;
             flag2 = p2 & 1;
         }
-        if(flag2 == 0) {
-                m = p1 / 2 + p2 / 2 + p3 / 2;
-            }
-            else m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
+        if (flag2 == 0)
+        {
+            m = p1 / 2 + p2 / 2 + p3 / 2;
+        }
+        else
+            m = p1 / 2 + p2 / 2 + p3 / 2 + 1;
     }
-    
     cout << n + m - 1 << endl;
 }
 
@@ -61,13 +79,12 @@ int main()
     cout.tie(0);
 
     int t;
-    cin>>t;
+    cin >> t;
 
     while (t--)
     {
         solve();
     }
-    
 
     return 0;
 }
