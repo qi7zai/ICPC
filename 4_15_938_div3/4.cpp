@@ -19,7 +19,7 @@ void solve()
         cin >> b[i];
         mpb[b[i]]++;
     }
-    int cnt = 0;
+    int cnt = 0; // 记录匹配的元素的个数
     for (auto [x, num] : mpb)
         if (mpa[x])
             cnt += min(num, mpa[x]);
